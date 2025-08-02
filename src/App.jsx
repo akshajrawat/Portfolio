@@ -11,14 +11,19 @@ import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import project from "./Assets/project1.png";
 import pfp from "./Assets/profile.jpg";
+import ContactForm from "./Components/ContactForm";
 
 const paths = [
   { name: "Home", path: "#Home", icon: HomeIcon },
   { name: "About", path: "#About", icon: AboutIcon },
   { name: "Project", path: "#Project", icon: ProjectIcon },
   { name: "Contact", path: "#Contact", icon: ContactIcon },
-  { name: "Linkdin", path: "#Linkdin", icon: LinkdinIcon },
-  { name: "GitHub", path: "#GitHub", icon: GitHubIcon },
+  {
+    name: "Linkdin",
+    path: "https://www.linkedin.com/in/akshaj-rawat-436a84314/",
+    icon: LinkdinIcon,
+  },
+  { name: "GitHub", path: "https://github.com/akshajrawat", icon: GitHubIcon },
 ];
 
 const skills = [
@@ -77,42 +82,64 @@ const skillspj = [
 
 function App() {
   return (
-    <div id="Home" className="bg-[#0a0a0a] text-white relative">
+    <div id="Home" className="bg-[#0a0a0a] text-white relative p-3">
       {/* Home section begins */}
-      <nav className=" flex items-center justify-center w-full h-[60px] sticky top-0 left-0 z-50 bg-[#0a0a0acb]">
+      <nav className="flex items-center justify-center w-full h-[60px] sticky top-0 left-0 z-50 bg-[#0a0a0acb]">
         <ul className="flex justify-around items-center border border-[#ffffff51] w-[270px] h-[44px] rounded-full bg-[#0a0a0a]">
           {paths.map((item, index) => {
             return (
-              <li key={index}>
-                <a href={item.path}>
+              <li
+                key={index}
+                className="group relative flex flex-col items-center"
+              >
+                <a
+                  href={item.path}
+                  className="flex items-center justify-center w-9 h-9 rounded-full transition-all duration-200 group-hover:scale-110 group-hover:bg-white/10"
+                >
                   <img
                     src={item.icon}
-                    alt="icons"
+                    alt={`${item.name} icon`}
                     className="h-[18px] invert"
                   />
                 </a>
+                <span className="absolute top-[42px] bg-white text-black text-[12px] px-2 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap font-medium">
+                  {item.name}
+                </span>
               </li>
             );
           })}
         </ul>
       </nav>
-      <div className="h-[100vh] max-w-[100vw]  flex-col">
-        <div className="h-[68%] flex flex-col justify-start items-center w-full p-4 gap-2 mt-12">
-          <div className="shinning w-[217px]  text-xs border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-1.5 whitespace-nowrap relative overflow-hidden">
+
+      <div className="h-[100vh] max-w-[100vw] flex-col">
+        <div className="h-[68%] flex flex-col justify-start items-center w-full p-4 gap-2 xl:gap-5 mt-12 lg:mt-18">
+          <div className="shinning   text-xs border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-2 whitespace-nowrap relative overflow-hidden lg:py-3">
             Actively Seeking Job Opportunities
           </div>
-          <h1 className="text-4xl font-bold text-center flex h-[144px] justify-center items-center">
+          <h1 className="text-4xl lg:text-6xl lg:w-[80%] xl:w-[65%] font-bold text-center flex h-[144px] justify-center items-center">
             Crafting Beautiful & Functional Web Experiences
           </h1>
-          <h4 className="text-center font-medium h-[72px]">
+          <h4 className="text-center font-medium h-[72px] lg:text-xl lg:w-[80%] xl:w-[55%]">
             Hey, I'm Akshaj Rawat, a Full Stack Developer passionate about
             building performant, user-friendly, and scalable applications.
           </h4>
-          <div className=" w-[311px] h-[37px]  border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-1.5 whitespace-nowrap ">
-            👋 Let's Connect
-          </div>
-          <div className=" w-[311px] h-[37px]  border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-1.5 whitespace-nowrap ">
-            My Resume 👇
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-3 mt-12  lg:text-xl">
+            <a
+              href="https://www.linkedin.com/in/akshaj-rawat-436a84314/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[311px] h-[37px] border border-[#ffffff51] flex justify-center items-center rounded-full whitespace-nowrap lg:w-[182px] lg:h-[45px]
+             transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-white/10"
+            >
+              👋 Let's Connect
+            </a>
+
+            <div
+              className="w-[311px] h-[37px] border border-[#ffffff51] flex justify-center items-center rounded-full whitespace-nowrap lg:w-[182px] lg:h-[45px]
+             transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-white/10"
+            >
+              My Resume 👇
+            </div>
           </div>
         </div>
 
@@ -128,7 +155,7 @@ function App() {
       >
         <div className="mt-15 flex flex-col justify-center items-center">
           <p> GET TO KNOW ME </p>
-          <p className="glow text-3xl font-bold flex">
+          <p className="glow text-3xl lg:text-5xl font-bold flex">
             <span>A</span>
             <span>b</span>
             <span>o</span>
@@ -138,65 +165,69 @@ function App() {
             <span>e</span>
           </p>
         </div>
-        <div className="w-full flex flex-col justify-start items-center px-4 mt-12">
-          <div className="w-[170px] h-[170px] rounded-full bg-black border-[#ffffff51] border overflow-hidden">
-            <img className="w-full h-full object-cover" src={pfp} alt="" />
-          </div>
-          <p className="text-center mt-3 pb-4">
-            I'm a passionate Full-Stack Developer who loves building dynamic,
-            user-friendly applications. I thrive on solving problems, creating
-            seamless experiences, and continuously expanding my skills. Always
-            eager to learn and grow, I'm currently looking for new opportunities
-            to contribute and innovate.
-          </p>
-        </div>
-
-        <div className="h-[500px] w-[343px] px-2 border-t border-[#ffffff51]">
-          <div className="w-[327px] py-3  ">
-            <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
-              Education
-            </h1>
-            <p className="w-full flex justify-between items-center  text-sm ">
-              <span className="font-medium"> Enter University Name </span>
-              <span> Enter Date </span>
-            </p>
-            <p className="w-full flex justify-between items-center text-sm ">
-              <span> Enter Stream </span>
-              <span> Enter CGPA </span>
+        <div className="flex flex-col justify-center items-center lg:flex-row w-full lg:mt-10">
+          <div className="w-[90%] flex flex-col justify-start items-center px-4 mt-12 lg:mt-0 lg:w-[40%] ">
+            <div className="w-[170px] h-[170px] rounded-full bg-black border-[#ffffff51] border overflow-hidden">
+              <img className="w-full h-full object-cover" src={pfp} alt="" />
+            </div>
+            <p className="text-center mt-3 pb-4 lg:w-[60%]">
+              I'm a passionate Full-Stack Developer who loves building dynamic,
+              user-friendly applications. I thrive on solving problems, creating
+              seamless experiences, and continuously expanding my skills. Always
+              eager to learn and grow, I'm currently looking for new
+              opportunities to contribute and innovate.
             </p>
           </div>
 
-          <div className="w-[327px] py-3 border-t border-[#ffffff51] ">
-            <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
-              Experience
-            </h1>
-            <p className="w-full flex justify-between items-center  text-sm ">
-              <span className="font-medium"> Enter Your job role </span>
-              <span> Enter Date </span>
-            </p>
-            <p className="w-full flex justify-between items-center text-sm ">
-              <span> Enter Your job role </span>
-              <span> Enter Date </span>
-            </p>
-            <div className="  border-l-3 border-white h-[40px] text-sm px-4 mt-3">
-              Enter what you have done in your designated roles{" "}
+          <div className="h-[500px] w-[343px] px-2 border-t border-[#ffffff51] lg:w-[60%] lg:border-l lg:border-t-0 lg:px-10 ">
+            <div className="w-[327px] lg:w-full xl:w-[90%] py-3  ">
+              <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
+                Education
+              </h1>
+              <p className="w-full flex justify-between items-center  text-sm ">
+                <span className="font-medium"> Enter University Name </span>
+                <span> Enter Date </span>
+              </p>
+              <p className="w-full flex justify-between items-center text-sm ">
+                <span> Enter Stream </span>
+                <span> Enter CGPA </span>
+              </p>
             </div>
-            <div className=" border-l-3 border-white h-[40px] text-sm px-4 mt-3">
-              Enter what you have done in your designated roles
-            </div>
-            <div className=" border-l-3  border-white h-[40px] text-sm px-4 mt-3">
-              Enter what you have done in your designated roles
-            </div>
-          </div>
 
-          <div className="w-[327px] py-3 border-t border-[#ffffff51] ">
-            <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
-              Tech Stacks
-            </h1>
-            <div className="flex flex-wrap gap-1 mt-1">
-              {skills.map((item, index) => {
-                return <Skill key={index} name={item.name} icon={item.icon} />;
-              })}
+            <div className="w-[327px] lg:w-full xl:w-[90%] py-3 border-t border-[#ffffff51] ">
+              <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
+                Experience
+              </h1>
+              <p className="w-full flex justify-between items-center  text-sm ">
+                <span className="font-medium"> Enter Your job role </span>
+                <span> Enter Date </span>
+              </p>
+              <p className="w-full flex justify-between items-center text-sm ">
+                <span> Enter Your job role </span>
+                <span> Enter Date </span>
+              </p>
+              <div className="  border-l-3 border-white h-[40px] text-sm px-4 mt-3">
+                Enter what you have done in your designated roles{" "}
+              </div>
+              <div className=" border-l-3 border-white h-[40px] text-sm px-4 mt-3">
+                Enter what you have done in your designated roles
+              </div>
+              <div className=" border-l-3  border-white h-[40px] text-sm px-4 mt-3">
+                Enter what you have done in your designated roles
+              </div>
+            </div>
+
+            <div className="w-[327px] lg:w-full xl:w-[90%] py-3 border-t border-[#ffffff51] ">
+              <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
+                Tech Stacks
+              </h1>
+              <div className="flex flex-wrap gap-1 mt-1">
+                {skills.map((item, index) => {
+                  return (
+                    <Skill key={index} name={item.name} icon={item.icon} />
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -210,7 +241,7 @@ function App() {
       >
         <div className="mt-15 flex flex-col justify-center items-center">
           <p> EXPLORE MY CREATIONS </p>
-          <p className="glow text-3xl font-bold flex">
+          <p className="glow text-3xl font-bold flex lg:text-5xl">
             <span>P</span>
             <span>r</span>
             <span>o</span>
@@ -223,7 +254,7 @@ function App() {
         </div>
         {/* project display */}
         <div className="w-full p-3 mt-4">
-          <div className="border border-[#ffffff51] rounded-xl w-full p-4">
+          <div className="border border-[#ffffff51] rounded-xl w-full lg:w-[80%] lg:mx-auto p-4">
             <h2 className="text-xl font-bold border-b border-[#ffffff51] py-3">
               Full stack app
             </h2>
@@ -275,6 +306,7 @@ function App() {
         </div>
       </div>
       {/* project section end  */}
+      {/* contact section start  */}
       <div
         id="Contact"
         className="max-w-[100vw] w-full flex flex-col justify-start items-center px-4 py-10"
@@ -282,7 +314,7 @@ function App() {
         {/* Header */}
         <div className="mt-15 flex flex-col justify-center items-center">
           <p> GET IN TOUCH </p>
-          <p className="glow text-3xl font-bold flex">
+          <p className="glow text-3xl lg:text-5xl font-bold flex">
             <span>C</span>
             <span>o</span>
             <span>n</span>
@@ -295,42 +327,18 @@ function App() {
           </p>
         </div>
 
-        {/* Unified Contact Form Box */}
-        <div className="w-full max-w-3xl p-3 mt-6">
-          <div className="border border-[#ffffff51] rounded-xl w-full p-6 flex flex-col gap-4">
-            {/* Contact Info */}
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex-1 h-[60px] px-6 py-2 flex gap-3 justify-start items-center border border-[#ffffff51] rounded-xl text-sm md:text-base">
-                📧 <span>akshajrawat@example.com</span>
-              </div>
-              <div className="flex-1 h-[60px] px-6 py-2 flex gap-3 justify-start items-center border border-[#ffffff51] rounded-xl text-sm md:text-base">
-                📱 <span>+91 9876543210 (WhatsApp)</span>
-              </div>
-            </div>
-
-            {/* Message Form */}
-            <p className="text-sm text-gray-300 font-semibold text-center mt-2">
-              Or send a message
-            </p>
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-3 rounded-md border border-gray-600 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-            <textarea
-              placeholder="Your Message"
-              rows={4}
-              className="w-full px-4 py-3 rounded-md border border-gray-600 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
-            />
-            <button
-              type="submit"
-              className="mt-2 w-full py-2 border border-[#ffffff51] rounded-xl text-white hover:bg-[#ffffff15] transition-all duration-200"
-            >
-              Send Message
-            </button>
-          </div>
-        </div>
+        {/* Contact Form Box */}
+        <ContactForm />
       </div>
+      {/* contact section end  */}
+      {/* footer section start  */}
+      <footer className="w-full mt-10 border-t border-[#ffffff51] py-4 px-4 text-center text-sm text-gray-400 flex flex-col gap-10 sm:flex-row sm:justify-center sm:items-center">
+        <p>© 2025 Akshaj Rawat. All rights reserved.</p>
+        <p className="text-xs sm:text-sm">
+          Portfolio inspired by Avinash Singh
+        </p>
+      </footer>
+      {/* footer section end */}
     </div>
   );
 }

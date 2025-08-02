@@ -1,0 +1,338 @@
+import React from "react";
+import HomeIcon from "./Assets/Home.svg";
+import AboutIcon from "./Assets/About.svg";
+import ProjectIcon from "./Assets/Projects.svg";
+import ContactIcon from "./Assets/Contact.svg";
+import LinkdinIcon from "./Assets/Linkdin.svg";
+import GitHubIcon from "./Assets/GitHub.svg";
+import "./App.css";
+import Skill from "./Components/Skill";
+import { FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import project from "./Assets/project1.png";
+import pfp from "./Assets/profile.jpg";
+
+const paths = [
+  { name: "Home", path: "#Home", icon: HomeIcon },
+  { name: "About", path: "#About", icon: AboutIcon },
+  { name: "Project", path: "#Project", icon: ProjectIcon },
+  { name: "Contact", path: "#Contact", icon: ContactIcon },
+  { name: "Linkdin", path: "#Linkdin", icon: LinkdinIcon },
+  { name: "GitHub", path: "#GitHub", icon: GitHubIcon },
+];
+
+const skills = [
+  {
+    name: "HTML",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+  {
+    name: "Node.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  },
+  {
+    name: "Express.js",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-light.svg",
+  },
+  {
+    name: "MongoDB",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  },
+  {
+    name: "Postman",
+    icon: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+  },
+];
+
+const skillspj = [
+  {
+    name: "HTML",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  },
+  {
+    name: "CSS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  },
+  {
+    name: "JavaScript",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "React",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  },
+];
+
+function App() {
+  return (
+    <div id="Home" className="bg-[#0a0a0a] text-white relative">
+      {/* Home section begins */}
+      <nav className=" flex items-center justify-center w-full h-[60px] sticky top-0 left-0 z-50 bg-[#0a0a0acb]">
+        <ul className="flex justify-around items-center border border-[#ffffff51] w-[270px] h-[44px] rounded-full bg-[#0a0a0a]">
+          {paths.map((item, index) => {
+            return (
+              <li key={index}>
+                <a href={item.path}>
+                  <img
+                    src={item.icon}
+                    alt="icons"
+                    className="h-[18px] invert"
+                  />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <div className="h-[100vh] max-w-[100vw]  flex-col">
+        <div className="h-[68%] flex flex-col justify-start items-center w-full p-4 gap-2 mt-12">
+          <div className="shinning w-[217px]  text-xs border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-1.5 whitespace-nowrap relative overflow-hidden">
+            Actively Seeking Job Opportunities
+          </div>
+          <h1 className="text-4xl font-bold text-center flex h-[144px] justify-center items-center">
+            Crafting Beautiful & Functional Web Experiences
+          </h1>
+          <h4 className="text-center font-medium h-[72px]">
+            Hey, I'm Akshaj Rawat, a Full Stack Developer passionate about
+            building performant, user-friendly, and scalable applications.
+          </h4>
+          <div className=" w-[311px] h-[37px]  border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-1.5 whitespace-nowrap ">
+            👋 Let's Connect
+          </div>
+          <div className=" w-[311px] h-[37px]  border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-1.5 whitespace-nowrap ">
+            My Resume 👇
+          </div>
+        </div>
+
+        <div className="w-full h-25 z-10 relative overflow-hidden  before:absolute before:inset-0 before:bg-[radial-gradient(circle_at_bottom_center,#1a237e,transparent_80%)] before:opacity-60  [mask-image:radial-gradient(60%_60%,white,transparent)]">
+          <div className=" w-[200%] absolute z-20 h-200 top-1/2 -left-1/2 border-t-4 border-t-[#d0e8ff] bg-[#0a0a0a] rounded-[100%] shadow-[inset_0_2px_20px_#d0e8ff,0_-10px_50px_1px_#d0e8ffb3]"></div>
+        </div>
+      </div>
+      {/* Home section ends */}
+      {/* About section begins */}
+      <div
+        id="About"
+        className=" max-w-[100vw] flex flex-col justify-start items-center"
+      >
+        <div className="mt-15 flex flex-col justify-center items-center">
+          <p> GET TO KNOW ME </p>
+          <p className="glow text-3xl font-bold flex">
+            <span>A</span>
+            <span>b</span>
+            <span>o</span>
+            <span>u</span>
+            <span>t</span>
+            <span className="ml-3">M</span>
+            <span>e</span>
+          </p>
+        </div>
+        <div className="w-full flex flex-col justify-start items-center px-4 mt-12">
+          <div className="w-[170px] h-[170px] rounded-full bg-black border-[#ffffff51] border overflow-hidden">
+            <img className="w-full h-full object-cover" src={pfp} alt="" />
+          </div>
+          <p className="text-center mt-3 pb-4">
+            I'm a passionate Full-Stack Developer who loves building dynamic,
+            user-friendly applications. I thrive on solving problems, creating
+            seamless experiences, and continuously expanding my skills. Always
+            eager to learn and grow, I'm currently looking for new opportunities
+            to contribute and innovate.
+          </p>
+        </div>
+
+        <div className="h-[500px] w-[343px] px-2 border-t border-[#ffffff51]">
+          <div className="w-[327px] py-3  ">
+            <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
+              Education
+            </h1>
+            <p className="w-full flex justify-between items-center  text-sm ">
+              <span className="font-medium"> Enter University Name </span>
+              <span> Enter Date </span>
+            </p>
+            <p className="w-full flex justify-between items-center text-sm ">
+              <span> Enter Stream </span>
+              <span> Enter CGPA </span>
+            </p>
+          </div>
+
+          <div className="w-[327px] py-3 border-t border-[#ffffff51] ">
+            <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
+              Experience
+            </h1>
+            <p className="w-full flex justify-between items-center  text-sm ">
+              <span className="font-medium"> Enter Your job role </span>
+              <span> Enter Date </span>
+            </p>
+            <p className="w-full flex justify-between items-center text-sm ">
+              <span> Enter Your job role </span>
+              <span> Enter Date </span>
+            </p>
+            <div className="  border-l-3 border-white h-[40px] text-sm px-4 mt-3">
+              Enter what you have done in your designated roles{" "}
+            </div>
+            <div className=" border-l-3 border-white h-[40px] text-sm px-4 mt-3">
+              Enter what you have done in your designated roles
+            </div>
+            <div className=" border-l-3  border-white h-[40px] text-sm px-4 mt-3">
+              Enter what you have done in your designated roles
+            </div>
+          </div>
+
+          <div className="w-[327px] py-3 border-t border-[#ffffff51] ">
+            <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
+              Tech Stacks
+            </h1>
+            <div className="flex flex-wrap gap-1 mt-1">
+              {skills.map((item, index) => {
+                return <Skill key={index} name={item.name} icon={item.icon} />;
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* About section ends */}
+
+      {/* Projects section start */}
+      <div
+        id="Project"
+        className=" max-w-[100vw] flex flex-col justify-start items-center"
+      >
+        <div className="mt-15 flex flex-col justify-center items-center">
+          <p> EXPLORE MY CREATIONS </p>
+          <p className="glow text-3xl font-bold flex">
+            <span>P</span>
+            <span>r</span>
+            <span>o</span>
+            <span>j</span>
+            <span>e</span>
+            <span>c</span>
+            <span>t</span>
+            <span>s</span>
+          </p>
+        </div>
+        {/* project display */}
+        <div className="w-full p-3 mt-4">
+          <div className="border border-[#ffffff51] rounded-xl w-full p-4">
+            <h2 className="text-xl font-bold border-b border-[#ffffff51] py-3">
+              Full stack app
+            </h2>
+            <div className=" font-semibold flex flex-col gap-2 py-2">
+              <h3>Full Stack Auth System with JWT & Activity Logging</h3>
+              <p className="text-sm">
+                - Secure authentication with JWT, stored in HTTP-only cookies.
+              </p>
+              <p className="text-sm">
+                - Centralized async error handling with custom middleware.
+              </p>
+              <p className="text-sm">
+                - User dashboard with login activity logs; admin panel lists all
+                users.
+              </p>
+              <p className="text-sm">
+                - Built with modular folder structure, reusable token utilities,
+                and dynamic React forms.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-1">
+              {skillspj.map((item, index) => {
+                return <Skill key={index} name={item.name} icon={item.icon} />;
+              })}
+            </div>
+            {/* links */}
+            <div className="w-full flex justify-start items-center gap-3 mt-4">
+              <div className="h-[37px] w-[107px] flex gap-1 justify-center items-center border border-[#ffffff51] rounded-xl ">
+                <FaGithub />
+                <a href="https://github.com/akshajrawat/fullstack-auth-app">
+                  GitHub
+                </a>
+              </div>
+              <div className="h-[37px] w-[107px] flex gap-1 justify-center items-center border border-[#ffffff51] rounded-xl ">
+                <a href="https://authapp-uco0.onrender.com/">Live Site</a>
+                <FaExternalLinkAlt />
+              </div>
+            </div>
+
+            {/* image */}
+            <div className="w-full rounded-xl overflow-hidden mt-4">
+              <img
+                className="w-full h-full object-cover"
+                src={project}
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* project section end  */}
+      <div
+        id="Contact"
+        className="max-w-[100vw] w-full flex flex-col justify-start items-center px-4 py-10"
+      >
+        {/* Header */}
+        <div className="mt-15 flex flex-col justify-center items-center">
+          <p> GET IN TOUCH </p>
+          <p className="glow text-3xl font-bold flex">
+            <span>C</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>a</span>
+            <span>c</span>
+            <span>t</span>
+            <span className="ml-3">M</span>
+            <span>e</span>
+          </p>
+        </div>
+
+        {/* Unified Contact Form Box */}
+        <div className="w-full max-w-3xl p-3 mt-6">
+          <div className="border border-[#ffffff51] rounded-xl w-full p-6 flex flex-col gap-4">
+            {/* Contact Info */}
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex-1 h-[60px] px-6 py-2 flex gap-3 justify-start items-center border border-[#ffffff51] rounded-xl text-sm md:text-base">
+                📧 <span>akshajrawat@example.com</span>
+              </div>
+              <div className="flex-1 h-[60px] px-6 py-2 flex gap-3 justify-start items-center border border-[#ffffff51] rounded-xl text-sm md:text-base">
+                📱 <span>+91 9876543210 (WhatsApp)</span>
+              </div>
+            </div>
+
+            {/* Message Form */}
+            <p className="text-sm text-gray-300 font-semibold text-center mt-2">
+              Or send a message
+            </p>
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full px-4 py-3 rounded-md border border-gray-600 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+            <textarea
+              placeholder="Your Message"
+              rows={4}
+              className="w-full px-4 py-3 rounded-md border border-gray-600 bg-transparent text-white focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+            />
+            <button
+              type="submit"
+              className="mt-2 w-full py-2 border border-[#ffffff51] rounded-xl text-white hover:bg-[#ffffff15] transition-all duration-200"
+            >
+              Send Message
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default App;

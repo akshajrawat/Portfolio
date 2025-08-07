@@ -12,6 +12,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import project from "./Assets/project1.png";
 import pfp from "./Assets/profile.jpg";
 import ContactForm from "./Components/ContactForm";
+import { motion } from "framer-motion";
 
 const paths = [
   { name: "Home", path: "#Home", icon: HomeIcon },
@@ -80,12 +81,24 @@ const skillspj = [
   },
 ];
 
+const delay = 0.1;
 function App() {
   return (
     <div id="Home" className="bg-[#0a0a0a] text-white relative p-3">
       {/* Home section begins */}
       <nav className="flex items-center justify-center w-full h-[60px] sticky top-0 left-0 z-50 bg-[#0a0a0acb]">
-        <ul className="flex justify-around items-center border border-[#ffffff51] w-[270px] h-[44px] rounded-full bg-[#0a0a0a]">
+        <motion.ul
+          initial={{
+            opacity: 0,
+            y: -100,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="flex justify-around items-center border border-[#ffffff51] w-[270px] h-[44px] rounded-full bg-[#0a0a0a]"
+        >
           {paths.map((item, index) => {
             return (
               <li
@@ -108,23 +121,65 @@ function App() {
               </li>
             );
           })}
-        </ul>
+        </motion.ul>
       </nav>
 
       <div className="h-[100vh] max-w-[100vw] flex-col">
         <div className="h-[68%] flex flex-col justify-start items-center w-full p-4 gap-2 xl:gap-5 mt-12 lg:mt-18">
-          <div className="shinning   text-xs border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-2 whitespace-nowrap relative overflow-hidden lg:py-3">
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.8,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: delay }}
+            className="shinning   text-xs border-[#ffffff51] border flex justify-center items-center rounded-full px-4 py-2 whitespace-nowrap relative overflow-hidden lg:py-3"
+          >
             Actively Seeking Job Opportunities
-          </div>
-          <h1 className="text-4xl lg:text-6xl lg:w-[80%] xl:w-[65%] font-bold text-center flex h-[144px] justify-center items-center">
+          </motion.div>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: delay * 2 }}
+            className="text-4xl lg:text-6xl lg:w-[80%] xl:w-[65%] font-bold text-center flex h-[144px] justify-center items-center"
+          >
             Crafting Beautiful & Functional Web Experiences
-          </h1>
-          <h4 className="text-center font-medium h-[72px] lg:text-xl lg:w-[80%] xl:w-[55%]">
+          </motion.h1>
+          <motion.h4
+            initial={{
+              opacity: 0,
+              y: 30,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: delay * 3 }}
+            className="text-center font-medium h-[72px] lg:text-xl lg:w-[80%] xl:w-[55%]"
+          >
             Hey, I'm Akshaj Rawat, a Full Stack Developer passionate about
             building performant, user-friendly, and scalable applications.
-          </h4>
+          </motion.h4>
           <div className="flex flex-col lg:flex-row justify-center items-center gap-3 mt-12  lg:text-xl">
-            <a
+            <motion.a
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: delay * 2 }}
               href="https://www.linkedin.com/in/akshaj-rawat-436a84314/"
               target="_blank"
               rel="noopener noreferrer"
@@ -132,14 +187,23 @@ function App() {
              transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-white/10"
             >
               👋 Let's Connect
-            </a>
+            </motion.a>
 
-            <div
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: delay * 2 }}
               className="w-[311px] h-[37px] border border-[#ffffff51] flex justify-center items-center rounded-full whitespace-nowrap lg:w-[182px] lg:h-[45px]
              transition-transform duration-300 ease-in-out hover:scale-105 hover:bg-white/10"
             >
               My Resume 👇
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -153,7 +217,18 @@ function App() {
         id="About"
         className=" max-w-[100vw] flex flex-col justify-start items-center"
       >
-        <div className="mt-15 flex flex-col justify-center items-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: delay * 2 }}
+          className="mt-15 flex flex-col justify-center items-center"
+        >
           <p> GET TO KNOW ME </p>
           <p className="glow text-3xl lg:text-5xl font-bold flex">
             <span>A</span>
@@ -164,9 +239,21 @@ function App() {
             <span className="ml-3">M</span>
             <span>e</span>
           </p>
-        </div>
+        </motion.div>
         <div className="flex flex-col justify-center items-center lg:flex-row w-full lg:mt-10">
-          <div className="w-[90%] flex flex-col justify-start items-center px-4 mt-12 lg:mt-0 lg:w-[40%] ">
+          {/* left section */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -10,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: delay * 3 }}
+            className="w-[90%] flex flex-col justify-start items-center px-4 mt-12 lg:mt-0 lg:w-[40%] "
+          >
             <div className="w-[170px] h-[170px] rounded-full bg-black border-[#ffffff51] border overflow-hidden">
               <img className="w-full h-full object-cover" src={pfp} alt="" />
             </div>
@@ -177,9 +264,21 @@ function App() {
               eager to learn and grow, I'm currently looking for new
               opportunities to contribute and innovate.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="h-[500px] w-[343px] px-2 border-t border-[#ffffff51] lg:w-[60%] lg:border-l lg:border-t-0 lg:px-10 ">
+          {/* right */}
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 10,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: delay * 3 }}
+            className="h-[500px] w-[343px] px-2 border-t border-[#ffffff51] lg:w-[60%] lg:border-l lg:border-t-0 lg:px-10 "
+          >
             <div className="w-[327px] lg:w-full xl:w-[90%] py-3  ">
               <h1 className=" font-semibold text-xl flex justify-start items-center h-[28px] mb-1">
                 Education
@@ -229,7 +328,7 @@ function App() {
                 })}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* About section ends */}
@@ -239,7 +338,18 @@ function App() {
         id="Project"
         className=" max-w-[100vw] flex flex-col justify-start items-center"
       >
-        <div className="mt-15 flex flex-col justify-center items-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: delay * 2 }}
+          className="mt-15 flex flex-col justify-center items-center"
+        >
           <p> EXPLORE MY CREATIONS </p>
           <p className="glow text-3xl font-bold flex lg:text-5xl">
             <span>P</span>
@@ -251,10 +361,21 @@ function App() {
             <span>t</span>
             <span>s</span>
           </p>
-        </div>
+        </motion.div>
         {/* project display */}
         <div className="w-full p-3 mt-4">
-          <div className="border border-[#ffffff51] rounded-xl w-full lg:w-[80%] lg:mx-auto p-4">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -10,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{ duration: 0.5, ease: "easeOut", delay: delay * 3 }}
+            className="border border-[#ffffff51] rounded-xl w-full lg:w-[80%] lg:mx-auto p-4"
+          >
             <h2 className="text-xl font-bold border-b border-[#ffffff51] py-3">
               Full stack app
             </h2>
@@ -280,15 +401,16 @@ function App() {
                 return <Skill key={index} name={item.name} icon={item.icon} />;
               })}
             </div>
+
             {/* links */}
             <div className="w-full flex justify-start items-center gap-3 mt-4">
-              <div className="h-[37px] w-[107px] flex gap-1 justify-center items-center border border-[#ffffff51] rounded-xl ">
+              <div className="h-[37px] w-[107px] flex gap-1 justify-center items-center border border-[#ffffff51] rounded-xl hover:scale-105 hover:bg-white/10">
                 <FaGithub />
                 <a href="https://github.com/akshajrawat/fullstack-auth-app">
                   GitHub
                 </a>
               </div>
-              <div className="h-[37px] w-[107px] flex gap-1 justify-center items-center border border-[#ffffff51] rounded-xl ">
+              <div className="h-[37px] w-[107px] flex gap-1 justify-center items-center border border-[#ffffff51] rounded-xl hover:scale-105 hover:bg-white/10">
                 <a href="https://authapp-uco0.onrender.com/">Live Site</a>
                 <FaExternalLinkAlt />
               </div>
@@ -302,7 +424,7 @@ function App() {
                 alt=""
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/* project section end  */}
@@ -312,7 +434,18 @@ function App() {
         className="max-w-[100vw] w-full flex flex-col justify-start items-center px-4 py-10"
       >
         {/* Header */}
-        <div className="mt-15 flex flex-col justify-center items-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: delay * 2 }}
+          className="mt-15 flex flex-col justify-center items-center"
+        >
           <p> GET IN TOUCH </p>
           <p className="glow text-3xl lg:text-5xl font-bold flex">
             <span>C</span>
@@ -325,7 +458,7 @@ function App() {
             <span className="ml-3">M</span>
             <span>e</span>
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact Form Box */}
         <ContactForm />

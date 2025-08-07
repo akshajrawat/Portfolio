@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
+const delay = 0.1;
 const ContactForm = () => {
   const form = useRef();
 
@@ -31,7 +33,16 @@ const ContactForm = () => {
   };
 
   return (
-    <div
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: -10,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      transition={{ duration: 0.5, ease: "easeOut", delay: delay * 3 }}
       id="Contact"
       className="max-w-[100vw] w-full flex flex-col justify-start items-center px-4 py-10"
     >
@@ -92,7 +103,7 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
-    </div>
+    </motion.div>
   );
 };
 

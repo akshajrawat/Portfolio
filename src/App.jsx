@@ -284,12 +284,12 @@ function App() {
                 Education
               </h1>
               <p className="w-full flex justify-between items-center  text-sm ">
-                <span className="font-medium"> Enter University Name </span>
-                <span> Enter Date </span>
+                <span className="font-medium"> Uttranchal University, Dehradun </span>
+                <span> 2025 - current </span>
               </p>
               <p className="w-full flex justify-between items-center text-sm ">
-                <span> Enter Stream </span>
-                <span> Enter CGPA </span>
+                <span> Btech Cse </span>
+                <span> 1st year </span>
               </p>
             </div>
 
@@ -298,10 +298,12 @@ function App() {
                 Experience
               </h1>
               <p className="w-full flex justify-between items-center  text-sm ">
-                <span className="font-medium"> Enter Your job role </span>
-                <span> Enter Date </span>
+                Currently a fresher with no job-experience. 
+                Looking For Opportunities.
+                {/* <span className="font-medium"> Enter Your job role </span>
+                <span> Enter Date </span> */}
               </p>
-              <p className="w-full flex justify-between items-center text-sm ">
+              {/* <p className="w-full flex justify-between items-center text-sm ">
                 <span> Enter Your job role </span>
                 <span> Enter Date </span>
               </p>
@@ -313,7 +315,7 @@ function App() {
               </div>
               <div className=" border-l-3  border-white h-[40px] text-sm px-4 mt-3">
                 Enter what you have done in your designated roles
-              </div>
+              </div> */}
             </div>
 
             <div className="w-[327px] lg:w-full xl:w-[90%] py-3 border-t border-[#ffffff51] ">
